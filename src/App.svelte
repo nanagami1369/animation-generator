@@ -56,7 +56,7 @@
     </div>
     <div>
       <h2>animation-timing-function</h2>
-      <p>何秒かけてアニメーションを1回するか指定します</p>
+      <p>1回あたり、どのようにアニメーションするか指定します。</p>
       <p>
         現在の設定:<span class="current-animation-timing-function"
           >{animationTimingFunction}</span
