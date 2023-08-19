@@ -122,6 +122,24 @@
       /><span>秒 </span></label
     >
   </div>
+  <div class="control5">
+    <h2>animation-iteration-count</h2>
+    <p>アニメーション回数を設定します</p>
+    <p>
+      {`${animationIterationCount}回`}
+    </p>
+    <button on:click={restartAnimation}>再起動</button>
+    <label>
+      <input
+        type="number"
+        min="0.1"
+        bind:value={animationIterationCount}
+        step="0.1"
+      /><span>回 </span></label
+    >
+    <button on:click={() => (animationIterationCount = "infinite")}>無限</button
+    >
+  </div>
 </main>
 
 <style>
@@ -162,7 +180,8 @@
       "control1 animation-viewer"
       "control2 animation-viewer"
       "control3 animation-viewer"
-      "control4 animation-viewer";
+      "control4 animation-viewer"
+      "control5 animation-viewer";
   }
 
   .title {
@@ -231,6 +250,10 @@
 
   .control4 {
     grid-area: control4;
+  }
+
+  .control5 {
+    grid-area: control5;
   }
 
   /* progress bar animation start */
