@@ -161,7 +161,8 @@
       "title title"
       "control1 animation-viewer"
       "control2 animation-viewer"
-      "control3 animation-viewer";
+      "control3 animation-viewer"
+      "control4 animation-viewer";
   }
 
   .title {
@@ -227,6 +228,10 @@
     }
   }
   /* animation timing function animation end*/
+
+  .control4 {
+    grid-area: control4;
+  }
 
   /* progress bar animation start */
   .progress-bar-container {
