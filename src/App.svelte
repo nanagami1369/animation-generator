@@ -12,6 +12,18 @@
 		animation-iteration-count: ${animationIterationCount};
 		animation-direction: ${animationDirection};
 		animation-fill-mode: ${animationFillMode};`;
+
+  const restartAnimation = () => {
+    const animationComponent = Array.from(
+      document.querySelectorAll(".animation-component")
+    );
+    animationComponent
+      .map((component) => component as HTMLElement)
+      .forEach((component) => {
+        component.classList.remove("animation-component");
+        setTimeout(() => component.classList.add("animation-component"), 100);
+      });
+  };
 </script>
 
 <main>
@@ -21,7 +33,7 @@
     <h3>プログレスバー</h3>
     <div>
       <div class="progress-bar-container">
-        <div class="progress-bar" style={animationStyle} />
+        <div class="progress-bar animation-component" style={animationStyle} />
       </div>
     </div>
   </div>
@@ -34,7 +46,6 @@
     <p>何秒かけてアニメーションを1回するか指定します</p>
     <label>
       <input
-        class="animation-duration-input"
         type="number"
         min="0.1"
         bind:value={animationDuration}
@@ -55,7 +66,7 @@
         <h3>linear</h3>
         <div class="animation-timing-function-container">
           <div
-            class="animation-timing-function-bar"
+            class="animation-timing-function-bar animation-component"
             style="animation-timing-function: linear;"
           />
         </div>
@@ -64,7 +75,7 @@
         <h3>ease</h3>
         <div class="animation-timing-function-container">
           <div
-            class="animation-timing-function-bar"
+            class="animation-timing-function-bar animation-component"
             style="animation-timing-function: ease;"
           />
         </div>
@@ -73,7 +84,7 @@
         <h3>ease-in</h3>
         <div class="animation-timing-function-container">
           <div
-            class="animation-timing-function-bar"
+            class="animation-timing-function-bar animation-component"
             style="animation-timing-function: ease-in;"
           />
         </div>
@@ -82,7 +93,7 @@
         <h3>ease-out</h3>
         <div class="animation-timing-function-container">
           <div
-            class="animation-timing-function-bar"
+            class="animation-timing-function-bar animation-component"
             style="animation-timing-function: ease-out;"
           />
         </div>
@@ -91,12 +102,25 @@
         <h3>ease-in-out</h3>
         <div class="animation-timing-function-container">
           <div
-            class="animation-timing-function-bar"
+            class="animation-timing-function-bar animation-component"
             style="animation-timing-function: ease-in-out;"
           />
         </div>
       </button>
     </div>
+  </div>
+  <div class="control4">
+    <h2>animation-delay</h2>
+    <p>アニメーションをいつ実行するか設定します</p>
+    <button on:click={restartAnimation}>再起動</button>
+    <label>
+      <input
+        type="number"
+        min="0"
+        bind:value={animationDelay}
+        step="0.1"
+      /><span>秒 </span></label
+    >
   </div>
 </main>
 
@@ -152,7 +176,7 @@
     grid-area: control1;
   }
 
-  .animation-duration-input:invalid {
+  input[type="number"]:invalid {
     border: solid red;
   }
 
@@ -183,12 +207,15 @@
     height: 100%;
     width: 30px;
     background-color: #ff0000;
-    animation-name: animationTimingFunctionAnimation;
     animation-duration: 3s;
     animation-delay: 0s;
     animation-iteration-count: infinite;
     animation-direction: normal;
     animation-fill-mode: forwards;
+  }
+
+  .animation-component.animation-timing-function-bar {
+    animation-name: animationTimingFunctionAnimation;
   }
 
   @keyframes animationTimingFunctionAnimation {
@@ -209,10 +236,12 @@
 
   .progress-bar {
     height: 100%;
+    width: 0;
     background-color: cornflowerblue;
+  }
+  .animation-component.progress-bar {
     animation-name: progressBarAnimation;
   }
-
   @keyframes progressBarAnimation {
     from {
       width: 0%;
