@@ -42,12 +42,83 @@
       /><span>秒 </span></label
     >
   </div>
+  <div class="control3">
+    <h2>animation-timing-function</h2>
+    <p>何秒かけてアニメーションを1回するか指定します</p>
+    <p>
+      現在の設定:<span class="current-animation-timing-function"
+        >{animationTimingFunction}</span
+      >
+    </p>
+    <div class="ease-function-area">
+      <button on:click={() => (animationTimingFunction = "linear")}>
+        <h3>linear</h3>
+        <div class="animation-timing-function-container">
+          <div
+            class="animation-timing-function-bar"
+            style="animation-timing-function: linear;"
+          />
+        </div>
+      </button>
+      <button on:click={() => (animationTimingFunction = "ease")}>
+        <h3>ease</h3>
+        <div class="animation-timing-function-container">
+          <div
+            class="animation-timing-function-bar"
+            style="animation-timing-function: ease;"
+          />
+        </div>
+      </button>
+      <button on:click={() => (animationTimingFunction = "ease-in")}>
+        <h3>ease-in</h3>
+        <div class="animation-timing-function-container">
+          <div
+            class="animation-timing-function-bar"
+            style="animation-timing-function: ease-in;"
+          />
+        </div>
+      </button>
+      <button on:click={() => (animationTimingFunction = "ease-out")}>
+        <h3>ease-out</h3>
+        <div class="animation-timing-function-container">
+          <div
+            class="animation-timing-function-bar"
+            style="animation-timing-function: ease-out;"
+          />
+        </div>
+      </button>
+      <button on:click={() => (animationTimingFunction = "ease-in-out")}>
+        <h3>ease-in-out</h3>
+        <div class="animation-timing-function-container">
+          <div
+            class="animation-timing-function-bar"
+            style="animation-timing-function: ease-in-out;"
+          />
+        </div>
+      </button>
+    </div>
+  </div>
 </main>
 
 <style>
   h1 {
     border-left: 0.5em solid red;
     padding-left: 5px;
+  }
+
+  button {
+    background-color: #ffffff;
+    border: #8e8888 solid 1px;
+    border-radius: 7px;
+    padding: 5px 10px;
+  }
+
+  button:hover {
+    background-color: #ece6e6;
+  }
+
+  button:active {
+    background-color: #c8c0c0;
   }
 
   main {
@@ -65,7 +136,8 @@
     grid-template-areas:
       "title title"
       "control1 animation-viewer"
-      "control2 animation-viewer";
+      "control2 animation-viewer"
+      "control3 animation-viewer";
   }
 
   .title {
@@ -87,6 +159,47 @@
   .control2 {
     grid-area: control2;
   }
+
+  .control3 {
+    grid-area: control3;
+  }
+
+  .ease-function-area {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .current-animation-timing-function {
+    font-weight: bold;
+  }
+  /* animation timing function animation start */
+  .animation-timing-function-container {
+    height: 1.5em;
+    width: 100%;
+    border: 1px solid #6c6767;
+  }
+
+  .animation-timing-function-bar {
+    height: 100%;
+    width: 30px;
+    background-color: #ff0000;
+    animation-name: animationTimingFunctionAnimation;
+    animation-duration: 3s;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    animation-fill-mode: forwards;
+  }
+
+  @keyframes animationTimingFunctionAnimation {
+    from {
+      margin-left: 0px;
+    }
+    to {
+      margin-left: calc(100% - 30px);
+    }
+  }
+  /* animation timing function animation end*/
 
   /* progress bar animation start */
   .progress-bar-container {
