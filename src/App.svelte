@@ -32,11 +32,6 @@
   <div class="control2">
     <h2>animation-duration</h2>
     <p>何秒かけてアニメーションを1回するか指定します</p>
-    <label> <input type="number" /><span>秒 </span></label>
-  </div>
-  <div class="control2">
-    <h2>animation-duration</h2>
-    <p>何秒かけてアニメーションを1回するか指定します</p>
     <label>
       <input
         class="animation-duration-input"
