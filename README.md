@@ -12,4 +12,5 @@ yarn dev
 ```
 
 # LICENSE
-[MIT LICENSE](https://github.com/nanagami1369/animation-generator/edit/main/LISENCE)
+
+[MIT LICENSE](https://github.com/nanagami1369/animation-generator/blob/main/LICENSE)
