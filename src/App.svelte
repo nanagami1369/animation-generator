@@ -43,7 +43,7 @@
 <main>
   <h1 class="title">animation generator</h1>
   <div class="animation-viewer">
-    <div>
+    <div class="animation-viewer-area">
       <h2>アニメーション</h2>
       <h3>プログレスバー</h3>
       <div>
@@ -314,7 +314,7 @@
 
   main {
     margin: 0 auto;
-    margin-top: 20px;
+    padding-top: 20px;
     width: min(700px, 100%);
   }
 
@@ -335,6 +335,12 @@
 
   .animation-viewer {
     grid-area: animation-viewer;
+    height: 100%;
+  }
+
+  .animation-viewer-area {
+    position: sticky;
+    top: 0;
   }
 
   .control {
