@@ -83,3 +83,11 @@
     </li>
   </ul>
 </main>
+
+<style>
+  main {
+    margin: 0 auto;
+    padding-top: 20px;
+    width: min(700px, 100%);
+  }
+</style>
