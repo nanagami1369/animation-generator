@@ -4,10 +4,11 @@
     faArrowRight,
     faArrowLeft,
     faArrowRightArrowLeft,
+    faCopy,
   } from "@fortawesome/free-solid-svg-icons";
   import { onMount } from "svelte";
 
-  library.add(faArrowRight, faArrowLeft, faArrowRightArrowLeft);
+  library.add(faArrowRight, faArrowLeft, faArrowRightArrowLeft, faCopy);
 
   let animationDuration = 3;
   let animationTimingFunction = "ease";
@@ -33,6 +34,11 @@
         component.classList.remove("animation-component");
         setTimeout(() => component.classList.add("animation-component"), 100);
       });
+  };
+
+  const copyAnimationStyle = async () => {
+    const style = `animation: $\{name\} ${animationDuration}s ${animationTimingFunction} ${animationDelay}s ${animationIterationCount} ${animationDirection} ${animationFillMode};`;
+    await navigator.clipboard.writeText(style);
   };
 
   onMount(() => {
@@ -321,6 +327,12 @@
     </div>
   </div>
 </main>
+<button class="copy-style-button" on:click={copyAnimationStyle}>
+  {@html "<!--Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc. -->"}
+  <span class="message">作成したスタイルをコピー</span><i
+    class="fa-solid fa-copy"
+  />
+</button>
 
 <style>
   h1 {
@@ -341,6 +353,37 @@
 
   button:active {
     background-color: #c8c0c0;
+  }
+
+  .copy-style-button {
+    width: 16em;
+    height: 50px;
+    background-color: #393131;
+    color: white;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 7px;
+  }
+
+  .copy-style-button:hover {
+    background-color: #736868;
+  }
+
+  .copy-style-button:active {
+    background-color: #9d9191;
+  }
+
+  @media screen and (max-width: 500px) {
+    .copy-style-button {
+      width: 50px;
+    }
+    .copy-style-button .message {
+      display: none;
+    }
   }
 
   main {
