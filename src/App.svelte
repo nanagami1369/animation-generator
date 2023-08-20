@@ -1,16 +1,19 @@
 <script lang="ts">
   import { Router, link, Route } from "svelte-routing";
   import Index from "./Pages/Index.svelte";
+  import License from "./Pages/License.svelte";
 </script>
 
 <Router>
   <header class="header">
     <nav>
       <a href="/" use:link>Home</a>
+      <a href="/license" use:link>License</a>
     </nav>
   </header>
   <div>
     <Route path="/"><Index /></Route>
+    <Route path="/license"><License /></Route>
   </div>
 </Router>
 
