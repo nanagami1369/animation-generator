@@ -58,6 +58,14 @@
         <h3>ローディング</h3>
         <div class="loading animation-component" style={animationStyle} />
       </div>
+      <div>
+        <h3>ローディング2</h3>
+        <div class="loading2">
+          <div class="circle animation-component" style={animationStyle} />
+          <div class="circle animation-component" style={animationStyle} />
+          <div class="circle animation-component" style={animationStyle} />
+        </div>
+      </div>
     </div>
   </div>
   <div class="control">
@@ -468,6 +476,33 @@
 
     to {
       transform: rotate(360deg);
+    }
+  }
+  /* loading animation end */
+
+  /* loading animation start */
+  .loading2 {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+  }
+  .loading2 .circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #c8c0c0;
+  }
+
+  .animation-component.circle {
+    animation-name: loadingAnimation2;
+  }
+  @keyframes loadingAnimation2 {
+    from {
+      background-color: #ffffff;
+    }
+
+    to {
+      background-color: #6c6767;
     }
   }
   /* loading animation end */
