@@ -1,4 +1,14 @@
 <script lang="ts">
+  import { dom, library } from "@fortawesome/fontawesome-svg-core";
+  import {
+    faArrowRight,
+    faArrowLeft,
+    faArrowRightArrowLeft,
+  } from "@fortawesome/free-solid-svg-icons";
+  import { onMount } from "svelte";
+
+  library.add(faArrowRight, faArrowLeft, faArrowRightArrowLeft);
+
   let animationDuration = 3;
   let animationTimingFunction = "ease";
   let animationDelay = 0;
@@ -24,16 +34,25 @@
         setTimeout(() => component.classList.add("animation-component"), 100);
       });
   };
+
+  onMount(() => {
+    dom.i2svg();
+  });
 </script>
 
 <main>
   <h1 class="title">animation generator</h1>
   <div class="animation-viewer">
-    <h2>アニメーション</h2>
-    <h3>プログレスバー</h3>
     <div>
-      <div class="progress-bar-container">
-        <div class="progress-bar animation-component" style={animationStyle} />
+      <h2>アニメーション</h2>
+      <h3>プログレスバー</h3>
+      <div>
+        <div class="progress-bar-container">
+          <div
+            class="progress-bar animation-component"
+            style={animationStyle}
+          />
+        </div>
       </div>
     </div>
   </div>
@@ -58,8 +77,7 @@
       <h2>animation-timing-function</h2>
       <p>1回あたり、どのようにアニメーションするか指定します。</p>
       <p>
-        現在の設定:<span class="current-animation-timing-function"
-          >{animationTimingFunction}</span
+        現在の設定:<span class="current-setting">{animationTimingFunction}</span
         >
       </p>
       <div class="ease-function-area">
@@ -142,6 +160,41 @@
         >無限</button
       >
     </div>
+    <div>
+      <h2>animation-direction</h2>
+      <p>アニメーションの方向を設定します</p>
+      <p>
+        現在の設定:<span class="current-setting">{animationDirection}</span>
+      </p>
+      <div class="animation-direction-area">
+        <button
+          on:click={() => {
+            animationDirection = "normal";
+          }}
+          >normal <i class="fa-solid fa-arrow-right" />
+        </button>
+        <button
+          on:click={() => {
+            animationDirection = "reverse";
+          }}
+          >reverse <i class="fa-solid fa-arrow-left" />
+        </button>
+        <button
+          on:click={() => {
+            animationDirection = "alternate";
+          }}>alternate <i class="fa-solid fa-arrow-right-arrow-left" /></button
+        >
+        <button
+          on:click={() => {
+            animationDirection = "alternate-reverse";
+          }}
+          >alternate-reverse <i
+            class="fa-solid fa-arrow-right-arrow-left"
+            data-fa-transform="flip-h"
+          /></button
+        >
+      </div>
+    </div>
   </div>
 </main>
 
@@ -204,9 +257,10 @@
     flex-direction: column;
   }
 
-  .current-animation-timing-function {
+  .current-setting {
     font-weight: bold;
   }
+
   /* animation timing function animation start */
   .animation-timing-function-container {
     height: 1.5em;
@@ -238,6 +292,10 @@
     }
   }
   /* animation timing function animation end*/
+
+  .animation-direction-area {
+    display: flex;
+  }
 
   /* progress bar animation start */
   .progress-bar-container {
