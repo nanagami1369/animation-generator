@@ -1,5 +1,7 @@
 # animation generator
 
+[animation-generator](https://nanagami1369.github.io/animation-generator/)
+
 facilitates the creation of animated css.
 
 ![image](https://github.com/nanagami1369/animation-generator/assets/38910015/aebde185-bb1c-43bf-89f4-09b1f361b104)
