@@ -193,24 +193,33 @@
           on:click={() => {
             animationDirection = "normal";
           }}
-          >normal <i class="fa-solid fa-arrow-right" />
+          >normal
+          {@html "<!--Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc. -->"}
+          <i class="fa-solid fa-arrow-right" />
         </button>
         <button
           on:click={() => {
             animationDirection = "reverse";
           }}
-          >reverse <i class="fa-solid fa-arrow-left" />
+          >reverse
+          {@html "<!--Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc. -->"}
+          <i class="fa-solid fa-arrow-left" />
         </button>
         <button
           on:click={() => {
             animationDirection = "alternate";
-          }}>alternate <i class="fa-solid fa-arrow-right-arrow-left" /></button
+          }}
+          >alternate
+          {@html "<!--Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc. -->"}
+          <i class="fa-solid fa-arrow-right-arrow-left" /></button
         >
         <button
           on:click={() => {
             animationDirection = "alternate-reverse";
           }}
-          >alternate-reverse <i
+          >alternate-reverse
+          {@html "<!--Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc. -->"}
+          <i
             class="fa-solid fa-arrow-right-arrow-left"
             data-fa-transform="flip-h"
           /></button
