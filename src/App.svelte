@@ -45,14 +45,18 @@
   <div class="animation-viewer">
     <div class="animation-viewer-area">
       <h2>アニメーション</h2>
-      <h3>プログレスバー</h3>
       <div>
+        <h3>プログレスバー</h3>
         <div class="progress-bar-container">
           <div
             class="progress-bar animation-component"
             style={animationStyle}
           />
         </div>
+      </div>
+      <div>
+        <h3>ローディング</h3>
+        <div class="loading animation-component" style={animationStyle} />
       </div>
     </div>
   </div>
@@ -445,4 +449,26 @@
     }
   }
   /* progress bar animation end */
+  /* loading animation start */
+  .loading {
+    height: 100px;
+    width: 100px;
+    border: solid 10px cornflowerblue;
+    border-top: solid 10px transparent;
+    border-radius: 50%;
+  }
+
+  .animation-component.loading {
+    animation-name: loadingAnimation;
+  }
+  @keyframes loadingAnimation {
+    from {
+      transform: rotate(0deg);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  /* loading animation end */
 </style>
