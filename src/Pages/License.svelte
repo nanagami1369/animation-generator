@@ -9,7 +9,7 @@
           href="https://opensource.org/license/mit/">MIT LICENSE</a
         ></span
       >
-      <ul><li>Copyright (c) 2023 @Font Awesome</li></ul>
+      <ul><li>Copyright (c) 2023 Fonticons, Inc.</li></ul>
     </li>
     <li>
       <span
@@ -17,7 +17,7 @@
           href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a
         ></span
       >
-      <ul><li>Copyright 2023 Fonticons, Inc.</li></ul>
+      <ul><li>Copyright (c) 2023 Fonticons, Inc.</li></ul>
     </li>
     <li>
       <span
