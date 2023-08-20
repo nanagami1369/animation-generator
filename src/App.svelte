@@ -4,11 +4,11 @@
   import License from "./Pages/License.svelte";
 </script>
 
-<Router>
+<Router basepath="animation-generator">
   <header class="header">
     <nav>
-      <a href="/" use:link>Home</a>
-      <a href="/license" use:link>License</a>
+      <a href="/animation-generator" use:link>Home</a>
+      <a href="/animation-generator/license" use:link>License</a>
     </nav>
   </header>
   <div>
