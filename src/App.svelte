@@ -61,9 +61,19 @@
       <div>
         <h3>ローディング2</h3>
         <div class="loading2">
-          <div class="circle animation-component" style={animationStyle} />
-          <div class="circle animation-component" style={animationStyle} />
-          <div class="circle animation-component" style={animationStyle} />
+          <div
+            class="circle animation-component"
+            style={animationStyle + `animation-delay: ${animationDelay}s;`}
+          />
+          <div
+            class="circle animation-component"
+            style={animationStyle +
+              `animation-delay: ${animationDelay + 0.5}s;`}
+          />
+          <div
+            class="circle animation-component"
+            style={animationStyle + `animation-delay: ${animationDelay + 1}s;`}
+          />
         </div>
       </div>
     </div>
