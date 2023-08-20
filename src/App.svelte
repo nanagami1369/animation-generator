@@ -390,7 +390,7 @@
       margin-left: calc(100% - 30px);
     }
   }
-  /* animation timing function animation end*/
+  /* animation timing function animation end */
 
   .animation-direction-area {
     display: flex;
