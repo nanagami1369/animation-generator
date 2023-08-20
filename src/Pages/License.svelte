@@ -1,6 +1,7 @@
 <script lang="ts"></script>
 
 <main>
+  <h1>LICENSE</h1>
   <ul>
     <li>
       <span
@@ -89,5 +90,10 @@
     margin: 0 auto;
     padding-top: 20px;
     width: min(700px, 100%);
+  }
+
+  h1 {
+    border-left: 0.5em solid red;
+    padding-left: 5px;
   }
 </style>
