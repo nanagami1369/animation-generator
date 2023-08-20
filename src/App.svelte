@@ -195,6 +195,99 @@
         >
       </div>
     </div>
+    <div>
+      <h2>animation-fill-mode</h2>
+      <p>アニメーション開始・終了時のstyleを指定します</p>
+      <p>
+        現在の設定:<span class="current-setting">{animationFillMode}</span>
+      </p>
+      <div class="animation-fill-mode-area">
+        <button
+          on:click={() => {
+            animationFillMode = "none";
+          }}
+        >
+          <h3>none</h3>
+          <div class="animation-fill-mode-bar">
+            <div class="start-time">
+              <div>delay → start</div>
+              <div>original</div>
+            </div>
+            <div class="exec-time">
+              <div>exec</div>
+              <div>0% ~ 100</div>
+            </div>
+            <div class="end-time">
+              <div>after the end</div>
+              <div>original</div>
+            </div>
+          </div>
+        </button>
+        <button
+          on:click={() => {
+            animationFillMode = "backwards";
+          }}
+        >
+          <h3>backwards</h3>
+          <div class="animation-fill-mode-bar">
+            <div class="start-time">
+              <div>delay → start</div>
+              <div>0%</div>
+            </div>
+            <div class="exec-time">
+              <div>exec</div>
+              <div>0% ~ 100</div>
+            </div>
+            <div class="end-time">
+              <div>after the end</div>
+              <div>0%</div>
+            </div>
+          </div>
+        </button>
+        <button
+          on:click={() => {
+            animationFillMode = "forwards";
+          }}
+        >
+          <h3>forwards</h3>
+          <div class="animation-fill-mode-bar">
+            <div class="start-time">
+              <div>delay → start</div>
+              <div>original</div>
+            </div>
+            <div class="exec-time">
+              <div>exec</div>
+              <div>0% ~ 100</div>
+            </div>
+            <div class="end-time">
+              <div>after the end</div>
+              <div>100%</div>
+            </div>
+          </div>
+        </button>
+        <button
+          on:click={() => {
+            animationFillMode = "both";
+          }}
+        >
+          <h3>both</h3>
+          <div class="animation-fill-mode-bar">
+            <div class="start-time">
+              <div>delay → start</div>
+              <div>0%</div>
+            </div>
+            <div class="exec-time">
+              <div>exec</div>
+              <div>0% ~ 100</div>
+            </div>
+            <div class="end-time">
+              <div>after the end</div>
+              <div>100%</div>
+            </div>
+          </div>
+        </button>
+      </div>
+    </div>
   </div>
 </main>
 
@@ -297,6 +390,31 @@
     display: flex;
   }
 
+  .animation-fill-mode-area {
+    display: flex;
+    flex-direction: column;
+  }
+  .animation-fill-mode-bar {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+  }
+  .animation-fill-mode-bar .start-time {
+    text-align: center;
+
+    flex: 1 1 calc(100% / 3);
+    border: #8e8888 solid 1px;
+  }
+  .animation-fill-mode-bar .exec-time {
+    text-align: center;
+    flex: 1 1 calc(100% / 3);
+    border: #8e8888 solid 1px;
+  }
+  .animation-fill-mode-bar .end-time {
+    text-align: center;
+    flex: 1 1 calc(100% / 3);
+    border: #8e8888 solid 1px;
+  }
   /* progress bar animation start */
   .progress-bar-container {
     width: 100%;
