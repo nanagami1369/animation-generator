@@ -244,7 +244,7 @@
             </div>
             <div class="end-time">
               <div>after the end</div>
-              <div>0%</div>
+              <div>original</div>
             </div>
           </div>
         </button>
